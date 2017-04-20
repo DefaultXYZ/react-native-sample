@@ -1,0 +1,1 @@
+# This is sample application built on React Native
