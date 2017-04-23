@@ -3,6 +3,7 @@
 import React, {Component} from "react";
 import {AppRegistry} from "react-native";
 import Root from "./App/Root";
+import NavigationApp from "./App/Navigation/Navigation";
 
 export default class MainApp extends Component {
     render() {
@@ -12,4 +13,4 @@ export default class MainApp extends Component {
     }
 }
 
-AppRegistry.registerComponent('SampleApplication', () => MainApp);
+AppRegistry.registerComponent('SampleApplication', () => NavigationApp);
