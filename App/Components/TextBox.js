@@ -10,7 +10,7 @@ class TextBox extends Component {
         return (
             <View style={styles.textBox}>
                 <Text style={styles.largeText}>Hello#_#World</Text>
-                <Text style={[styles.contentText, {display: this.props.visibility}]}>Clicked</Text>
+                <Text style={[styles.contentText, {display: this.props.display || 'flex'}]}>{this.props.title || 'Clicked'}</Text>
             </View>
         );
     }

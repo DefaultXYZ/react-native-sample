@@ -6,15 +6,17 @@ import TextBox from "../Components/TextBox";
 import ButtonBox from "../Components/ButtonBox";
 import styles from "../Resources/Styles";
 
-export default class TextVisibilityScene extends Component {
+export default class CounterScene extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {visibility: false};
+        this.state = {count: 0};
     }
 
     handleButtonClick() {
-        this.setState({visibility: !this.state.visibility});
+        let count = this.state.count;
+        count++;
+        this.setState({count: count});
     }
 
     toMain() {
@@ -22,14 +24,13 @@ export default class TextVisibilityScene extends Component {
     }
 
     render() {
-        let displayProperty = this.state.visibility ? 'flex' : 'none';
         return (
             <View style={styles.container}>
-                <TextBox display={displayProperty}/>
+                <TextBox title={"Clicked: " + this.state.count + " times"} />
                 <ButtonBox onClick={() => this.handleButtonClick()}/>
                 <ButtonBox
                     title='Back'
-                    onClick={() => this.toMain()} />
+                    onClick={() => this.toMain()}/>
             </View>
         );
     }

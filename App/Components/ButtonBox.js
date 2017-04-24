@@ -12,7 +12,7 @@ class ButtonBox extends Component {
             <View style={styles.buttonBox}>
                 <Button
                     color={globals.primaryColor}
-                    title="Click me"
+                    title={this.props.title || "Click me"}
                     onPress={this.props.onClick}/>
             </View>
         );

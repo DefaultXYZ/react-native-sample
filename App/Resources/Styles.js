@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         flex: 9
     },
     buttonBox: {
-        flex: 1
+        padding: 5
     }
 });
 
