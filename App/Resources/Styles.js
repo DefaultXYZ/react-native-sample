@@ -33,4 +33,8 @@ const styles = StyleSheet.create({
     }
 });
 
+export const colors = {
+    primaryColor: '#22a5e2'
+};
+
 export default styles;

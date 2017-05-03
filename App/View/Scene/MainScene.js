@@ -4,7 +4,7 @@ import React, {Component} from "react";
 import {View} from "react-native";
 import {scenes} from "../Navigation/MainNavigation";
 import ButtonBox from "../Components/ButtonBox";
-import styles from "../Resources/Styles";
+import styles from "../../Resources/Styles";
 
 export default class MainScene extends Component {
 

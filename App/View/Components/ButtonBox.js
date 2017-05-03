@@ -2,8 +2,7 @@
 
 import React, {Component} from "react";
 import {Button, View} from "react-native";
-import styles from "../Resources/Styles";
-import globals from '../Resources/Globals';
+import styles, {colors} from "../../Resources/Styles";
 
 class ButtonBox extends Component {
 
@@ -11,7 +10,7 @@ class ButtonBox extends Component {
         return (
             <View style={styles.buttonBox}>
                 <Button
-                    color={globals.primaryColor}
+                    color={colors.primaryColor}
                     title={this.props.title || "Click me"}
                     onPress={this.props.onClick}/>
             </View>

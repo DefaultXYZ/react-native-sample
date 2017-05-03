@@ -4,7 +4,7 @@ import React, {Component} from "react";
 import {View} from "react-native";
 import TextBox from "../Components/TextBox";
 import ButtonBox from "../Components/ButtonBox";
-import styles from "../Resources/Styles";
+import styles from "../../Resources/Styles";
 
 export default class TextVisibilityScene extends Component {
 
