@@ -5,51 +5,75 @@ import Calculator from "../App/Model/Calculator";
 describe('Calculator', () => {
     let calc;
 
-    it('should add two numbers', () => {
-        calc = new Calculator(2, 3);
-        calc.add();
-        expect(calc.c).toBe(5);
+    describe('Simple numbers', () => {
+        beforeEach(() => {
+            calc = new Calculator(6, 2);
+        });
+
+        it('should add two numbers', () => {
+            calc.add();
+            expect(calc.c).toBe(8);
+        });
+
+        it('should subtract two numbers', () => {
+            calc.subtract();
+            expect(calc.c).toBe(4);
+        });
+
+        it('should multiply two numbers', () => {
+            calc.multiply();
+            expect(calc.c).toBe(12);
+        });
+
+        it('should divide two numbers', () => {
+            calc.divide();
+            expect(calc.c).toBe(3);
+        });
     });
 
-    it('should subtract two numbers', () => {
-        calc = new Calculator(5, 3);
-        calc.subtract();
-        expect(calc.c).toBe(2);
+    describe('Numbers with floating point', () => {
+        beforeEach(() => {
+            calc = new Calculator(6.6, 3);
+        });
+
+        it('should add two numbers with floating point', () => {
+            calc.add();
+            expect(calc.c).toBeCloseTo(9.6, 1);
+        });
+
+        it('should subtract two numbers with floating point', () => {
+            calc.subtract();
+            expect(calc.c).toBeCloseTo(3.6, 1);
+        });
+
+        it('should multiply two numbers with floating point', () => {
+            calc.multiply();
+            expect(calc.c).toBeCloseTo(19.8, 1);
+        });
+
+        it('should divide two numbers with floating point', () => {
+            calc.divide();
+            expect(calc.c).toBeCloseTo(2.2, 1);
+        });
     });
 
-    it('should multiply two numbers', () => {
-        calc = new Calculator(2, 3);
-        calc.multiply();
-        expect(calc.c).toBe(6);
-    });
+    describe('Non-numeric values', () => {
+        it('should throw error on undefined number', () => {
+            expect(() => {
+                calc = new Calculator(undefined, 4);
+            }).toThrow('Value is undefined');
+        });
 
-    it('should divide two numbers', () => {
-        calc = new Calculator(6, 3);
-        calc.divide();
-        expect(calc.c).toBe(2);
-    });
+        it('should throw error on null', () => {
+            expect(() => {
+                calc = new Calculator(null, 4);
+            }).toThrow('Value is undefined');
+        });
 
-    it('should add two numbers with floating point', () => {
-        calc = new Calculator(2.5, 3);
-        calc.add();
-        expect(calc.c).toBeCloseTo(5.5, 1);
-    });
-
-    it('should subtract two numbers with floating point', () => {
-        calc = new Calculator(5, 3.4);
-        calc.subtract();
-        expect(calc.c).toBeCloseTo(1.6, 1);
-    });
-
-    it('should multiply two numbers with floating point', () => {
-        calc = new Calculator(2.2, 3);
-        calc.multiply();
-        expect(calc.c).toBeCloseTo(6.6, 1);
-    });
-
-    it('should divide two numbers with floating point', () => {
-        calc = new Calculator(6.6, 2);
-        calc.divide();
-        expect(calc.c).toBeCloseTo(3.3, 1);
+        it('should throw error on non-numeric value', () => {
+            expect(() => {
+                calc = new Calculator('Hello', 4);
+            }).toThrow('Value is non-numeric');
+        });
     });
 });
