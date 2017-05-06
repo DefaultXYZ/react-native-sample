@@ -25,9 +25,6 @@ const styles = StyleSheet.create({
         ...text,
         fontSize: 24
     },
-    textBox: {
-        flex: 9
-    },
     buttonBox: {
         padding: 5
     }

@@ -26,7 +26,9 @@ export default class CounterScene extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TextBox title={"Clicked: " + this.state.count + " times"} />
+                <TextBox
+                    style={{flex: 9}}
+                    title={"Clicked: " + this.state.count + " times"}/>
                 <ButtonBox onClick={() => this.handleButtonClick()}/>
                 <ButtonBox
                     title='Back'
