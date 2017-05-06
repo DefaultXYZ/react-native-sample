@@ -5,11 +5,13 @@ import {Navigator} from "react-native";
 import TextVisibilityScene from "../Scene/TextVisibilityScene";
 import MainScene from "../Scene/MainScene";
 import CounterScene from "../Scene/CounterScene";
+import CalculatorScene from "../Scene/CalculatorScene";
 
 export const scenes = {
     MainScene: 0,
     TextVisibilityScene: 1,
-    CounterScene: 2
+    CounterScene: 2,
+    CalculatorScene: 3
 };
 
 export default class MainNavigation extends Component {
@@ -22,7 +24,10 @@ export default class MainNavigation extends Component {
             return <TextVisibilityScene navigator={navigator}/>;
         }
         if (route.id === scenes.CounterScene) {
-            return <CounterScene navigator={navigator}/>
+            return <CounterScene navigator={navigator}/>;
+        }
+        if (route.id === scenes.CalculatorScene) {
+            return <CalculatorScene navigator={navigator}/>;
         }
     }
 

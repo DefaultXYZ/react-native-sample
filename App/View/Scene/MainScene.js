@@ -20,6 +20,12 @@ export default class MainScene extends Component {
         });
     }
 
+    toCalculatorScene() {
+        this.props.navigator.push({
+            id: scenes.CalculatorScene
+        });
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -29,6 +35,9 @@ export default class MainScene extends Component {
                 <ButtonBox
                     title='Counter'
                     onClick={() => this.toCounterScene()}/>
+                <ButtonBox
+                    title='Calculator'
+                    onClick={() => this.toCalculatorScene()}/>
             </View>
         );
     }
