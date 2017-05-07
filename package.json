@@ -15,8 +15,6 @@
   "devDependencies": {
     "babel-jest": "19.0.0",
     "babel-preset-react-native": "1.9.1",
-    "jasmine": "^2.6.0",
-    "jasmine-spec-reporter": "^4.1.0",
     "jest": "19.0.2",
     "react-redux": "^5.0.4",
     "react-test-renderer": "16.0.0-alpha.6",
