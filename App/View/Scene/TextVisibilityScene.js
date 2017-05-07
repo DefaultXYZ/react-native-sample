@@ -10,11 +10,12 @@ export default class TextVisibilityScene extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {visibility: false};
+        this.state = {title: ''};
     }
 
     handleButtonClick() {
-        this.setState({visibility: !this.state.visibility});
+        let title = this.state.title === '' ? 'Hello#_#World' : '';
+        this.setState({title});
     }
 
     toMain() {
@@ -22,14 +23,15 @@ export default class TextVisibilityScene extends Component {
     }
 
     render() {
-        let displayProperty = this.state.visibility ? 'flex' : 'none';
         return (
             <View style={styles.container}>
-                <TextBox display={displayProperty}/>
+                <TextBox
+                    style={{flex: 9}}
+                    title={this.state.title}/>
                 <ButtonBox onClick={() => this.handleButtonClick()}/>
                 <ButtonBox
                     title='Back'
-                    onClick={() => this.toMain()} />
+                    onClick={() => this.toMain()}/>
             </View>
         );
     }

@@ -6,11 +6,18 @@ import styles from "../../Resources/Styles";
 
 class TextBox extends Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
-            <View style={styles.textBox}>
-                <Text style={styles.largeText}>Hello#_#World</Text>
-                <Text style={[styles.contentText, {display: this.props.display || 'flex'}]}>{this.props.title || 'Clicked'}</Text>
+            <View style={this.props.style}>
+                <Text
+                    style={[
+                        styles.contentText,
+                        {display: this.props.display || 'flex'}
+                    ]}>{this.props.title}</Text>
             </View>
         );
     }
