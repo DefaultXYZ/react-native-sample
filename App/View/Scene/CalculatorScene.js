@@ -6,6 +6,7 @@ import TextBox from "../Components/TextBox";
 import ButtonBox from "../Components/ButtonBox";
 import styles, {colors} from "../../Resources/Styles";
 import {createStore} from "redux";
+import Calculator from "../../Model/Calculator";
 
 const ADD = 'ADD',
     SUBTRACT = 'SUBTRACT',
@@ -21,15 +22,20 @@ const initialState = {
 };
 
 const getSum = (action, a, b) => {
+    const calc = new Calculator(a, b);
     switch (action) {
         case ADD:
-            return a + b;
+            calc.add();
+            return calc.c;
         case SUBTRACT:
-            return a - b;
+            calc.subtract();
+            return calc.c;
         case MULTIPLY:
-            return a * b;
+            calc.multiply();
+            return calc.c;
         case DIVIDE:
-            return a / b;
+            calc.divide();
+            return calc.c;
         default:
             return a;
     }
